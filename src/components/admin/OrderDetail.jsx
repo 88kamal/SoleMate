@@ -99,16 +99,19 @@ const OrderDetail = () => {
 
 
                             </tr>
-                            {getAllOrder.map((order) => {
-                                console.log(order)
+                            {getAllOrder.map((order, index) => {
+                                console.log(index)
                                 return (
                                     <>
-                                        {order.cartItems.map((item, index) => {
+                                        {order.cartItems.map((item) => {
                                             const { id, productImageUrl, title, category, price, quantity } = item
                                             return (
                                                 <tr key={index} className="text-indigo-300">
                                                     <td className="h-12 px-6 text-md transition duration-300 border-t border-l first:border-l-0 border-indigo-100 stroke-slate-500 text-slate-500 ">
+                                                        {/* {getAllOrder.map((order, index) => order)}. */}
+                                                        {/* {index} */}
                                                         {index + 1}.
+
                                                     </td>
 
                                                     <td className="h-12 px-6 text-md transition duration-300 border-t border-l first:border-l-0 border-indigo-100 stroke-slate-500 text-slate-500 ">
@@ -167,7 +170,7 @@ const OrderDetail = () => {
                                                         {order.date}
                                                     </td>
 
-                                                    <td onClick={()=> orderDelete(order.id)} className="h-12 px-6 text-md transition duration-300 border-t border-l first:border-l-0 border-indigo-100 stroke-slate-500 text-slate-500 text-red-500 cursor-pointer ">
+                                                    <td onClick={() => orderDelete(order.id)} className="h-12 px-6 text-md transition duration-300 border-t border-l first:border-l-0 border-indigo-100 stroke-slate-500 text-slate-500 text-red-500 cursor-pointer ">
                                                         Delete
                                                     </td>
                                                 </tr>
