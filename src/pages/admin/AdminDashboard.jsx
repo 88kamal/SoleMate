@@ -3,17 +3,18 @@ import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
 import ProductDetail from "../../components/admin/ProductDetail";
 import OrderDetail from "../../components/admin/OrderDetail";
 import UserDetail from "../../components/admin/UserDetail";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import myContext from "../../context/myContext";
 
 const AdminDashboard = () => {
     const user = JSON.parse(localStorage.getItem('user'));
+    const navigate = useNavigate();
 
     const logout = () => {
-        localStorage.clear('user')
+        localStorage.clear("user")
+        navigate('/login')
     }
-
     const context = useContext(myContext);
     const { getAllUser, getAllProduct, getAllOrder } = context;
     return (

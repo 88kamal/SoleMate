@@ -2,6 +2,8 @@ import { useContext } from "react";
 import Layout from "../../components/layout/Layout";
 import myContext from "../../context/myContext";
 import Loader from "../../components/loader/Loader";
+import { Button } from "@material-tailwind/react";
+import { useNavigate } from "react-router";
 
 const UserDashboard = () => {
     // user
@@ -12,8 +14,16 @@ const UserDashboard = () => {
     // console.log(getAllOrder)
 
     // console.log(user)
+    
 
     const filterData = getAllOrder.filter((obj) => obj.userid === user?.uid)
+
+    const navigate = useNavigate();
+
+    const logout = () => {
+        localStorage.clear("user")
+        navigate('/login')
+    }
     return (
         <Layout>
             <div className=" container mx-auto px-4 py-5 lg:py-8">
@@ -51,6 +61,10 @@ const UserDashboard = () => {
                                 {user?.role}
                             </h1>
                         </div>
+
+                     <div className="flex justify-center mt-5">
+                     <Button className=" bg-indigo-500 py-2" onClick={logout}>Logout</Button>
+                     </div>
                     </div>
                 </div>
 
