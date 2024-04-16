@@ -21,7 +21,25 @@ const AdminDashboard = () => {
         <div>
             {/* Top */}
             <div className="top mb-5 px-5 mt-5">
-                <div className=" bg-indigo-50 py-5 border border-indigo-100 rounded-lg">
+                <div className=" bg-indigo-50 py-5 border border-indigo-100 rounded-lg flex justify-between items-center px-5">
+                   <Link to={'/'}>
+                   <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width={24}
+                        height={24}
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth={2}
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        className="lucide lucide-move-left"
+                    >
+                        <path d="M6 8L2 12L6 16" />
+                        <path d="M2 12H22" />
+                    </svg>
+
+</Link>
                     <h1 className=" text-center text-2xl font-bold text-indigo-500">Admin Dashboard</h1>
                 </div>
             </div>
@@ -63,7 +81,7 @@ const AdminDashboard = () => {
                         </div>
 
                         <div className="flex justify-center space-x-3 mt-2">
-                           <Link to={'/addproduct'}><Button className=" py-2 bg-indigo-500">Add Product</Button></Link>
+                            <Link to={'/addproduct'}><Button className=" py-2 bg-indigo-500">Add Product</Button></Link>
                             <Button className=" py-2 bg-indigo-500" onClick={logout}>Logout</Button>
                         </div>
                     </div>
@@ -165,15 +183,15 @@ const AdminDashboard = () => {
                         </TabList>
 
                         <TabPanel>
-                            <ProductDetail/>
+                            <ProductDetail />
                         </TabPanel>
 
                         <TabPanel>
-                            <OrderDetail/>
+                            <OrderDetail />
                         </TabPanel>
 
                         <TabPanel>
-                            <UserDetail/>
+                            <UserDetail />
                         </TabPanel>
 
 
