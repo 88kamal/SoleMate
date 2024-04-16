@@ -70,10 +70,10 @@ const closureList = [
 
 const genderList = [
     {
-        name: "male"
+        name: "m"
     },
     {
-        name: "female"
+        name: "f"
     }
 ]
 
@@ -339,7 +339,7 @@ const AddProductPage = () => {
                                 {genderList.map((value, index) => {
                                     const { name } = value
                                     return (
-                                        <option className=" capitalize" key={index} value={name}>{name}</option>
+                                        <option className=" capitalize" key={index} value={name}>{name == "m" ? "male" : "female"}</option>
                                     )
                                 })}
                             </select>

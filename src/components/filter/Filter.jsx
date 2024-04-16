@@ -79,10 +79,10 @@ const genderList = [
         name: 'All'
     },
     {
-        name: "male"
+        name: "m"
     },
     {
-        name: "female"
+        name: "f"
     }
 ]
 
@@ -202,7 +202,7 @@ const Filter = ({
                             className="form-select w-80 lg:w-72 outline-none py-2 px-2 rounded-md mt-2 bg-indigo-100">
                             {genderList.map((item, index) => {
                                 return (
-                                    <option key={index} value={item.name === "All" ? "" : item.name}>{item.name}</option>
+                                    <option key={index} value={item.name === "All" ? "" : item.name}>{item.name == "All" ? "All" : item.name == "m" ? "male" : "female"}</option>
                                 )
                             })}
                         </select>
@@ -221,19 +221,19 @@ const Filter = ({
                     </div>
                 </div>
 
-               <div className="flex lg:justify-center">
-               <div className="mb-3">
-                    <h1 className="fontPara font-semibold">Filter By ToeStyle</h1>
-                    <select value={filterByToeStyle} onChange={(e) => setFilterByToeStyle(e.target.value)}
-                        className="form-select w-80 lg:w-72 outline-none py-2 px-2 rounded-md mt-2 bg-indigo-100">
-                        {toeStyleList.map((item, index) => {
-                            return (
-                                <option key={index} value={item.name === "All" ? "" : item.name}>{item.name}</option>
-                            )
-                        })}
-                    </select>
+                <div className="flex lg:justify-center">
+                    <div className="mb-3">
+                        <h1 className="fontPara font-semibold">Filter By ToeStyle</h1>
+                        <select value={filterByToeStyle} onChange={(e) => setFilterByToeStyle(e.target.value)}
+                            className="form-select w-80 lg:w-72 outline-none py-2 px-2 rounded-md mt-2 bg-indigo-100">
+                            {toeStyleList.map((item, index) => {
+                                return (
+                                    <option key={index} value={item.name === "All" ? "" : item.name}>{item.name}</option>
+                                )
+                            })}
+                        </select>
+                    </div>
                 </div>
-               </div>
             </div>
         </>
     );
